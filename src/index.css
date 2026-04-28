@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Scorpion Group — dark luxury / tech editorial. Aligned with subdomain visual language. */
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 42 30% 94%;
+
+    --card: 0 0% 6%;
+    --card-foreground: 42 30% 94%;
+
+    --popover: 0 0% 6%;
+    --popover-foreground: 42 30% 94%;
+
+    /* Gold (brand) */
+    --primary: 42 75% 55%;
+    --primary-foreground: 0 0% 6%;
+    --primary-glow: 45 95% 65%;
+    --primary-deep: 38 70% 38%;
+
+    --secondary: 0 0% 9%;
+    --secondary-foreground: 42 30% 94%;
+
+    --muted: 0 0% 11%;
+    --muted-foreground: 42 8% 60%;
+
+    --accent: 42 75% 55%;
+    --accent-foreground: 0 0% 6%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 42 15% 14%;
+    --input: 0 0% 11%;
+    --ring: 42 75% 55%;
+
+    --radius: 0;
+
+    --gradient-gold: linear-gradient(135deg, hsl(38 70% 40%) 0%, hsl(45 95% 70%) 50%, hsl(38 70% 40%) 100%);
+    --gradient-text-gold: linear-gradient(180deg, hsl(45 95% 75%) 0%, hsl(38 70% 45%) 100%);
+    --gradient-fade-bottom: linear-gradient(180deg, transparent, hsl(0 0% 4%));
+
+    --shadow-gold: 0 20px 60px -15px hsl(42 75% 50% / 0.45);
+    --glow-gold: 0 0 80px hsl(45 95% 60% / 0.3);
+
+    --sidebar-background: 0 0% 4%;
+    --sidebar-foreground: 42 30% 94%;
+    --sidebar-primary: 42 75% 55%;
+    --sidebar-primary-foreground: 0 0% 6%;
+    --sidebar-accent: 0 0% 9%;
+    --sidebar-accent-foreground: 42 30% 94%;
+    --sidebar-border: 42 15% 14%;
+    --sidebar-ring: 42 75% 55%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -10%, hsl(42 75% 50% / 0.08), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 100% 100%, hsl(42 75% 50% / 0.05), transparent 60%);
+  }
+  ::selection {
+    background: hsl(var(--primary) / 0.35);
+    color: hsl(var(--primary-glow));
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Anton', 'Archivo', sans-serif;
+    letter-spacing: -0.01em;
+  }
+  .font-condensed {
+    font-family: 'Archivo', sans-serif;
+    font-stretch: condensed;
+  }
+  .text-gold-gradient {
+    background: var(--gradient-text-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .bg-gold-gradient { background: var(--gradient-gold); }
+  .shadow-gold { box-shadow: var(--shadow-gold); }
+  .glow-gold { box-shadow: var(--glow-gold); }
+  .tracking-luxury { letter-spacing: 0.22em; }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(hsl(var(--primary) / 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--primary) / 0.04) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  .noise {
+    position: relative;
+  }
+  .noise::after {
+    content: "";
+    position: absolute; inset: 0;
+    background-image: radial-gradient(hsl(var(--foreground) / 0.025) 1px, transparent 1px);
+    background-size: 3px 3px;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+  }
+
+  .gold-divider {
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.7), transparent);
+    height: 1px;
+  }
+
+  .badge-pill {
+    @apply inline-flex items-center gap-2 px-3 py-1.5 text-[10px] tracking-luxury uppercase border border-primary/30 bg-primary/5 text-primary/90;
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee { animation: marquee 40s linear infinite; }
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-14px) rotate(2deg); }
+}
+.animate-float-slow { animation: float-slow 8s ease-in-out infinite; }
+
+@keyframes pulse-gold {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+.animate-pulse-gold { animation: pulse-gold 2.4s ease-in-out infinite; }

@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(unzip -o \"C:\\\\Users\\\\SCORPION - FREITAS\\\\Downloads\\\\scorpion-group-hub-main.zip\" -d .)",
+      "Bash(gh auth *)",
+      "Bash(vercel --version)",
+      "Bash(mv scorpion-group-hub-main/* .)",
+      "Bash(mv scorpion-group-hub-main/.* .)",
+      "Bash(rmdir scorpion-group-hub-main *)",
+      "Bash(git init *)",
+      "Bash(cat)",
+      "Bash(git add *)",
+      "Bash(git commit -m 'feat: initial commit - Scorpion Group Hub *)"
+    ]
+  }
+}
