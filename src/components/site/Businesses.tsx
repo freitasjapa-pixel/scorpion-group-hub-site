@@ -42,6 +42,16 @@ const businesses = [
     url: "https://clientequevende.scorpiongroup.com.br/",
     accent: "from-emerald-400 to-teal-500",
   },
+  {
+    n: "05",
+    code: "VORTEX",
+    name: "Vórtex Scorpion",
+    tagline: "Automação de WhatsApp",
+    description:
+      "Automação de WhatsApp para pequenos negócios: atendimento, vendas e follow-up rodando 24/7 sem perder lead.",
+    url: "https://vortex.scorpiongroup.com.br/",
+    accent: "from-cyan-400 to-blue-500",
+  },
 ];
 
 const Businesses = () => {
@@ -58,7 +68,7 @@ const Businesses = () => {
           <div>
             <span className="badge-pill mb-6">◆ Portfólio</span>
             <h2 className="font-display uppercase text-5xl md:text-7xl leading-[0.9] tracking-tight max-w-2xl">
-              QUATRO EMPRESAS.
+              CINCO EMPRESAS.
               <br />
               <span className="text-gold-gradient">UMA ESTRATÉGIA.</span>
             </h2>
